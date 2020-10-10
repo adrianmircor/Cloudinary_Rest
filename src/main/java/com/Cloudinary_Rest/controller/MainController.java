@@ -26,12 +26,13 @@ public class MainController {
 
     @Autowired
     ImagenService imagenService;
+    
 
-    @GetMapping("/lista")
+    /*@GetMapping("/lista")
     public ResponseEntity<List<Imagen>> list(){
         List<Imagen> list = imagenService.list();
         return new ResponseEntity(list, HttpStatus.OK);
-    }
+    }*/
 
     @PostMapping("/subir")
     //El nombre de la variable de destino es el mismo que el nombre del parámetro -> multipartFile
@@ -53,7 +54,7 @@ public class MainController {
     }
 
     //En la BD, se elimina por medio de la PK, que es entero autoincrementable
-    @DeleteMapping("/borrar/{id}")
+    /*@DeleteMapping("/borrar/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) throws IOException {
 
         if(!imagenService.existe(id)){
@@ -64,6 +65,6 @@ public class MainController {
         Map result = cloudinaryService.delete(imagen.getImagenId()); //Se elimina de mi nube de Cloudinary
         imagenService.delete(id); //Se elimina de la BD
         return new ResponseEntity(new Mensaje("Imagen eliminada"), HttpStatus.OK);
-    }
+    }*/
 
 }

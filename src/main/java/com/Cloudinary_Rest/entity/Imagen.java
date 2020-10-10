@@ -1,19 +1,16 @@
 package com.Cloudinary_Rest.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "imagen")
 public class Imagen {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private String imagenId;
     private String name;
     private String imagenUrl;
-    private String imagenId;
+
 
     public Imagen() {
     }
@@ -24,13 +21,6 @@ public class Imagen {
         this.imagenId = imagenId;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -54,5 +44,14 @@ public class Imagen {
 
     public void setImagenId(String imagenId) {
         this.imagenId = imagenId;
+    }
+
+    @Override
+    public String toString() {
+        return "Imagen{" +
+                "imagenId='" + imagenId + '\'' +
+                ", name='" + name + '\'' +
+                ", imagenUrl='" + imagenUrl + '\'' +
+                '}';
     }
 }

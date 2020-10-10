@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface ImagenRepository extends JpaRepository<Imagen,Integer> {
 
-    List<Imagen> findByOrderById();
+    //List<Imagen> findByOrderById();
 
 }

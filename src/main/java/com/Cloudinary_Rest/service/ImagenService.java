@@ -17,9 +17,9 @@ public class ImagenService {
     @Autowired
     ImagenRepository imagenRepository;
 
-    public List<Imagen> list(){
+    /*public List<Imagen> list(){
         return imagenRepository.findByOrderById();
-    }
+    }*/
 
     public void save(Imagen imagen){
         imagenRepository.save(imagen);
